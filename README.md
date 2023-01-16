@@ -9,3 +9,12 @@ Initially this repo readme had some cringe things I wrote when first starting ou
 ## List of Projects
 
 - Sign Language Translator 
+- Project A.N.I.S
+- Project
+
+## To Do List (Initial launching)
+
+[] Welcome Page
+[] Project Page
+[] About Page
+[] Determine colour scheme
