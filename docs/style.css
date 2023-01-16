@@ -88,7 +88,7 @@ float: right;
 .section1{
     width: 100%;
     height: 600px;
-    background-image: url(../asset/Bubble.png);
+    background-image: url(asset/Bubble.png);
     background-origin: border-box;
     background-repeat: no-repeat;
     background-size: cover;
