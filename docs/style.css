@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+html{
+    font-size: 14px;
+    line-height: 1;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(244, 244, 244);
+}
+
+body{
+    margin: 0px;
+}
+
+
+ol, ul{
+    list-style: none;
+}
+
+
+a{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+ul.n-nav{
+    text-align: right;
+}
+
+img{
+    width: 50px;
+}
+
+div.n-nav{
+    position: fixed;
+    width: 100%;
+    border-top: none;
+    border-bottom: none;
+    z-index: 210;
+    font-size: 16px;
+    overflow: hidden;
+}
+  
+.n-nav-table{
+    margin: 10px 40px;
+}
+
+.logo{
+    flex-grow: 1; /* pushes logo to the left */
+    white-space: nowrap;
+}
+  
+.n-nav-items{
+    flex-grow: 1; /* pushes links to the right */
+    text-align: right;
+    display: inline-block;
+}
+
+.image-wrapper{
+    display: inline-block;
+}
+.n-nav a {
+    float: left;
+    color: #e5e5e5;
+    text-align: center;
+    padding: 14px 50px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.n-nav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+.n-nav-items{
+float: right;
+}
+
+.page-wrapper{
+    min-height: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+/* First Section */
+.section1{
+    width: 100%;
+    height: 600px;
+    background-image: url(../asset/Bubble.png);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-banner{
+    background-color: rgba(0, 0, 0, 0.644);
+    width: auto;
+    height: inherit;
+}
+
+.title{
+    text-align: center;
+    padding:25%;
+    color: white;
+    font-size: larger;
+}
+
+.title h1,h4{
+    margin: 0;
+}
+
+.title h1{
+    font-size: 75px;
+}
+
+.section2{
+    height: 400px;
+    background-color: rgb(103, 180, 180);
+   
+}
+
+.section3{
+    height: 400px;
+}
+
+.section4{
+    height: 400px;
+    background-color: rgb(93, 89, 89);
+}
+
+.section5{
+    height: 450px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #ddd;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.footer hr{
+    width: 85%;
+}
+
+.footer p{
+    margin: 5px;
+    padding: 0;
+}
+.footer a{
+    padding: 0px 20px;
+    font-size: 18px;
+}
+
+.pg-content{
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}

@@ -14,7 +14,7 @@ Initially this repo readme had some cringe things I wrote when first starting ou
 
 ## To Do List (Initial launching)
 
-[] Welcome Page
-[] Project Page
-[] About Page
-[] Determine colour scheme
+[ ] Welcome Page
+[ ] Project Page
+[ ] About Page
+[ ] Determine colour scheme
