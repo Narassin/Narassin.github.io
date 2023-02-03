@@ -40,9 +40,22 @@ div.n-nav{
     font-size: 16px;
     overflow: hidden;
 }
+/*  add another logo to differentiate the fixed navbar and normal postiton navbar one white and the other the original colour */
+div.n-nav-fixed{
+    position: fixed;
+    background-color: #31384D;
+    border-top: none;
+    border-bottom: none;
+    width: 100%;
+    top: 0px;
+    z-index: 210;
+    font-size: 13px;
+    overflow: hidden;
+    transition: top 0.3s;
+}
   
 .n-nav-table{
-    margin: 10px 40px;
+    padding: 10px 40px;
 }
 
 .logo{
@@ -59,16 +72,19 @@ div.n-nav{
 .image-wrapper{
     display: inline-block;
 }
-.n-nav a {
+
+/* change the font size between 17px and 19px */
+.n-nav-table a {
     float: left;
     color: #e5e5e5;
     text-align: center;
     padding: 14px 50px;
     text-decoration: none;
     font-size: 17px;
+    border-radius: 8px;
 }
 
-.n-nav a:hover {
+.n-nav-table a:hover {
 background-color: #ddd;
 color: black;
 }
@@ -85,7 +101,7 @@ float: right;
 }
 
 /* First Section */
-.section1{
+.section-1{
     width: 100%;
     height: 600px;
     background-image: url(asset/Bubble.png);
@@ -115,25 +131,67 @@ float: right;
     font-size: 75px;
 }
 
-.section2{
+.section-2{
     height: 400px;
     background-color: rgb(103, 180, 180);
    
 }
 
-.section3{
+.section-3{
     height: 400px;
 }
 
-.section4{
+.section-4{
     height: 400px;
     background-color: rgb(93, 89, 89);
 }
 
-.section5{
+/* Section 5 Socmed */
+
+.section-5{
     height: 450px;
 }
 
+.fa{
+    display:grid;
+    padding: 20px;
+    margin: 5px;
+    font-size: 30px;
+    width: 50px;
+    height:50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.fa:hover{
+    opacity: 0.7;
+}
+
+.fa-twitter{
+    background: rgb(69, 190, 220);
+    color: white;
+}
+
+.fa-youtube-play{
+    background: rgb(192, 4, 4);
+    color: white;    
+}
+
+.fa-twitch{
+    background: rgb(74, 41, 157);
+    color: white;
+
+}
+
+.fa-github{
+    background: rgb(13, 13, 13);
+    color: white;
+}
+
+
+
+/* Footer */
 .footer{
     position: absolute;
     bottom: 0;

@@ -1,12 +1,27 @@
 <!DOCTYPE html>
+<!--
+   Website Portfolio v 0.1
+   27/1/2023
+   To do:
+   Add content for each section
+   Video add iframe for the latest video
+   Change nav bar when scrolled - fixed navbar
+   change banner
+   add an summary between normal me and streamer me
+
+   size responsive
+
+-->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Narassin Page</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="n-nav">
+        <!--Navbar-->
+        <div class="n-nav" id="navbar">
             <div class="n-nav-table">
                 <div class="image-wrapper">
                     <div class="logo">
@@ -20,8 +35,9 @@
                 </div>
             </div>
         </div>  
+        <!--Page content-->
         <div class="page-wrapper">
-            <div class="section1">
+            <div class="section-1">
                 <div class="hero-banner">
                     <div class="title">
                         <h4>Coder, Project Maker, Content Creator</h4>
@@ -30,7 +46,7 @@
                 </div>
             </div>
             <!--About-->
-            <div class="section2">
+            <div class="section-2">
                 <div class="pg-content">
                     <div>
 
@@ -41,29 +57,28 @@
                 </div>
             </div>
             <!--Projects-->
-            <div class="section3">
+            <div class="section-3">
                 <div class="pg-content">
                     <h1>Projects everywhere</h1>
                     
                 </div>
             </div>
             <!--Vid-->
-            <div class="section4">
+            <div class="section-4">
                 <div class="pg-content">
                     <h1>Videos</h1>
                     
                 </div>
             </div>
             <!--Social media-->
-            <div class="section5">
+            <div class="section-5">
                 <div class="pg-content">
                     <h1>Official Accounts</h1>
                     <div>
-                        <a href="">Twitter</a>
-                        <a href="">Youtube</a>
-                        <a href="">Twitch</a>
-                        <a href="">Github</a>
-                        <a href="">Pixiv</a>
+                        <a href="https://twitter.com/TheNarassin" class="fa fa-twitter fa-3x"></a>
+                        <a href="https://www.youtube.com/channel/UCqBKSkIrQJML17nqLxy6rqg?sub_confirmation=1" class="fa fa-youtube-play fa-3x"></a>
+                        <a href="https://www.twitch.tv/narassin" class="fa fa-twitch fa-3x"></a>
+                        <a href="https://github.com/Narassin" class="fa fa-github fa-3x"></a>
                     </div>   
                 </div>
             </div>
@@ -77,5 +92,6 @@
                 <p>&copy;2023 TheNarassin</p>
             </div>
         </div>
+        <script src="home.js"></script>
     </body>
 </html>
