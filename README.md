@@ -18,3 +18,5 @@ Initially this repo readme had some cringe things I wrote when first starting ou
 [ ] Project Page
 [ ] About Page
 [ ] Determine colour scheme
+
+Initial Design was created using [Plasmic](https://plasmic.app?ref=narassin)
