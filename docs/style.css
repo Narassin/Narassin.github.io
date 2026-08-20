@@ -56,11 +56,57 @@ section:last-of-type {
     opacity: 0.3;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes hero-focus-pulse {
+        0%   { filter: blur(28px); }
+        14%  { filter: blur(0px); }
+        28%  { filter: blur(18px); }
+        42%  { filter: blur(0px); }
+        56%  { filter: blur(9px); }
+        70%  { filter: blur(0px); }
+        100% { filter: blur(0px); }
+    }
+
+    @keyframes target-lock-on {
+        0%   { opacity: 0; transform: translate(-18vw, 12vh) scale(0.7); filter: none; }
+        4%   { opacity: 1; }
+        8%   { opacity: 0.15; }
+        12%  { opacity: 1; }
+        16%  { opacity: 0.15; }
+        20%  { opacity: 1; }
+        35%  { transform: translate(10vw, 40vh) scale(0.9); }
+        70%  { transform: translate(14vw, -8vh) scale(1.15); }
+        85%  { transform: translate(-30vw, 30vh) scale(1); filter: none; }
+        90%  { transform: translate(0, 0); filter: brightness(2.2) saturate(3) drop-shadow(0 0 14px #00ff66); }
+        94%  { filter: none; }
+        97%  { filter: brightness(2.2) saturate(3) drop-shadow(0 0 14px #00ff66); }
+        100% { opacity: 1; transform: translate(0, 0) scale(1); filter: drop-shadow(0 0 0px rgba(0, 255, 102, 0.55)); }
+    }
+
+    @keyframes target-color-flicker {
+        0%   { opacity: 0; background-color: #ffffff; }
+        85%  { opacity: 0; background-color: #ffffff; }
+        90%  { opacity: 1; background-color: #00ff66; }
+        94%  { opacity: 0.15; background-color: #ffffff; }
+        97%  { opacity: 1; background-color: #00ff66; }
+        100% { opacity: 1; background-color: #00ff66; }
+    }
+
+    .hero-banner::before {
+        animation: hero-focus-pulse 4s ease-in 1 both;
+    }
+
+    .hero-asset-target {
+        animation: target-lock-on 4s ease-in-out 1 both;
+    }
+
+}
+
 .hero-asset-border{
     position: absolute;
     left: 1%;
     top: 1.7778%;
-    width: 97%;
+    width: 98%;
 
 }
 .hero-asset-dll{
