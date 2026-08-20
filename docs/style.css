@@ -109,13 +109,22 @@ section:last-of-type {
     }
 
     @keyframes hero-focus-pulse {
-        0%   { filter: blur(28px); }
+        0%   { filter: blur(28px); scale: 1; translate: 0 0; }
+        5%   { translate: -4px 2px; }
+        12%  { translate: 3px -3px; }
         14%  { filter: blur(0px); }
-        28%  { filter: blur(18px); }
+        20%  { translate: -3px -2px; }
+        28%  { filter: blur(18px); translate: 4px 3px; }
+        36%  { translate: -2px 3px; }
         42%  { filter: blur(0px); }
+        44%  { translate: 3px -2px; }
+        52%  { translate: -3px 1px; }
         56%  { filter: blur(9px); }
+        60%  { translate: 2px -3px; }
+        68%  { translate: -2px 2px; }
         70%  { filter: blur(0px); }
-        100% { filter: blur(0px); }
+        75%  { translate: 0 0; }
+        100% { filter: blur(0px); scale: 1.045; translate: 0 0; }
     }
 
     @keyframes target-lock-on {
