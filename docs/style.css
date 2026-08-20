@@ -6,12 +6,138 @@ html{
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
     background-color: rgb(244, 244, 244);
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* legacy Edge/IE */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Edge Chromium */
 }
 
 body{
     margin: 0px;
 }
 
+section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
+section:last-of-type {
+    min-height: 80vh;
+    scroll-snap-align: start;
+}
+
+
+.hero-banner{
+    position: relative; /* Establishes a positioning context for the background */
+    isolation: isolate; /* Ensures the negative z-index stays above the background color */
+    /* padding: 40px; */
+    width: 100%;
+    min-height: 110vh;
+    color: #121212;
+    z-index: 1;
+}
+
+.hero-banner::before {
+    content: ""; 
+    position: absolute;
+    inset: 0; /* Stretches the pseudo-element to fill the parent container */
+    z-index: -1; /* Places the image layer behind the text content */
+    
+    /* Apply your background properties here */
+    background-image: url(asset/Banner.png);
+    background-size: cover;
+    background-position: center;
+    
+    /* Control your background opacity here (0.0 to 1.0) */
+    opacity: 0.3;
+}
+
+.hero-asset-border{
+    position: absolute;
+    left: 1%;
+    top: 1.7778%;
+    width: 97%;
+
+}
+.hero-asset-dll{
+    position: absolute;
+    left: 96.875%;
+    top: 30.8889%;
+    width: 3.125%;
+    
+}
+
+.hero-asset-dlr{
+    position: absolute;
+    left: 0%;
+    top: 85.1111%;
+    width: 3.125%;
+    
+}
+
+.hero-asset-hr{
+    position: absolute;
+    left: 6%;
+    top: 96.4444%;
+    width: 86.125%;
+
+}
+
+.hero-asset-meta{
+    position: absolute;
+    left: 79.5625%;
+    top: 91.7778%;
+    width: 15.5%;
+
+}
+
+.hero-asset-patternl{
+    position: absolute;
+    left: 6.6875%;
+    top: 66.3333%;
+    width: 1.5625%;
+
+}
+
+.hero-asset-patternr{
+    position: absolute;
+    left: 89.9375%;
+    top: 79%;
+    width: 3.5%;
+
+}
+
+.hero-asset-sidel{
+    position: absolute;
+    left: 97.9375%;
+    top: 11.5556%;
+    width: 1.5%;
+
+}
+
+.hero-asset-sider{
+    position: absolute;
+    left: 0.75%;
+    top: 65.3333%;
+    width: 1.5%;
+
+}
+
+.hero-asset-target{
+    position: absolute;
+    left: 56.5625%;
+    top: 13.6667%;
+    width: 9.125%;
+
+}
+.hero-wrap{
+    background: color-mix(in srgb, rgb(33, 33, 33), transparent 30%);
+    z-index: 2;
+}
 
 ol, ul{
     list-style: none;
@@ -56,6 +182,43 @@ div.n-nav-fixed{
   
 .n-nav-table{
     padding: 10px 40px;
+}
+
+.ns-logo {
+    width: 25vh;
+    position: absolute;
+    left: 5vh;
+    top: 5.5vh
+}
+
+.nav-wrapper {
+    position: sticky;
+    left: 20vh;
+    bottom: 50vh;
+    z-index: 3;
+
+}
+
+#navSwitch{
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 2.5rem;
+    padding: 10px 20px;
+}
+
+#navSwitch.is-toggled {
+    transform: scale(1.2) rotate(90deg);
+}
+
+#navBar.offcanvas {
+    position: relative;
+    width: 400px;           /* Change the width */
+    height: auto;           /* Change the height if needed */
+    top: 0vh; 
+    background-color: transparent;
+    color: #ddd;
+    border: 0px;
 }
 
 .logo{

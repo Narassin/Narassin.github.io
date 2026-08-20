@@ -1,11 +1,17 @@
-window.onscroll = function() {scrollFunction()};
+// window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    document.getElementById("navbar").style.top = "0";
-    document.getElementById("navbar").className = "n-nav-fixed";
-  } else {
-    document.getElementById("navbar").style.top = "0";
-    document.getElementById("navbar").className = "n-nav";
-  }
-}
+// function scrollFunction() {
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//     document.getElementById("navbar").style.top = "0";
+//     document.getElementById("navbar").className = "n-nav-fixed";
+//   } else {
+//     document.getElementById("navbar").style.top = "0";
+//     document.getElementById("navbar").className = "n-nav";
+//   }
+// }
+
+const nav_switch = document.getElementById('navSwitch');
+
+nav_switch.addEventListener('click', () => {
+  nav_switch.classList.toggle('is-toggled');
+})
