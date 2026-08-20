@@ -6,12 +6,253 @@ html{
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
     background-color: rgb(244, 244, 244);
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* legacy Edge/IE */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Edge Chromium */
 }
 
 body{
     margin: 0px;
 }
 
+section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
+section:last-of-type {
+    min-height: 80vh;
+    scroll-snap-align: start;
+}
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+}
+
+.page-loader-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid #fff;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-size: 1.6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-loader {
+        display: none;
+    }
+}
+
+
+.hero-banner{
+    position: relative; /* Establishes a positioning context for the background */
+    isolation: isolate; /* Ensures the negative z-index stays above the background color */
+    /* padding: 40px; */
+    width: 100%;
+    min-height: 110vh;
+    color: #121212;
+    z-index: 1;
+}
+
+.hero-banner::before {
+    content: ""; 
+    position: absolute;
+    inset: 0; /* Stretches the pseudo-element to fill the parent container */
+    z-index: -1; /* Places the image layer behind the text content */
+    
+    /* Apply your background properties here */
+    background-image: url(asset/Banner.png);
+    background-size: cover;
+    background-position: center;
+    
+    /* Control your background opacity here (0.0 to 1.0) */
+    opacity: 0.3;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    @keyframes loader-typing {
+        from { width: 0; }
+        to   { width: 21ch; }
+    }
+
+    @keyframes loader-caret {
+        50% { border-color: transparent; }
+    }
+
+    @keyframes loader-fade-out {
+        to { opacity: 0; visibility: hidden; }
+    }
+
+    .page-loader-text {
+        width: 0;
+        animation: loader-typing 2.2s steps(20, end) forwards,
+                   loader-caret 0.6s step-end infinite;
+    }
+
+    .page-loader {
+        animation: loader-fade-out 0.6s ease-in forwards;
+        animation-delay: 3s;
+    }
+
+    @keyframes hero-focus-pulse {
+        0%   { filter: blur(28px); }
+        14%  { filter: blur(0px); }
+        28%  { filter: blur(18px); }
+        42%  { filter: blur(0px); }
+        56%  { filter: blur(9px); }
+        70%  { filter: blur(0px); }
+        100% { filter: blur(0px); }
+    }
+
+    @keyframes target-lock-on {
+        0%   { opacity: 0; transform: translate(-18vw, 12vh) scale(0.7); filter: none; }
+        4%   { opacity: 1; }
+        8%   { opacity: 0.15; }
+        12%  { opacity: 1; }
+        16%  { opacity: 0.15; }
+        20%  { opacity: 1; }
+        35%  { transform: translate(10vw, 40vh) scale(0.9); }
+        70%  { transform: translate(14vw, -8vh) scale(1.15); }
+        85%  { transform: translate(-30vw, 30vh) scale(1); filter: none; }
+        90%  { transform: translate(0, 0); filter: brightness(2.2) saturate(3) drop-shadow(0 0 14px #00ff66); }
+        94%  { filter: none; }
+        97%  { filter: brightness(2.2) saturate(3) drop-shadow(0 0 14px #00ff66); }
+        100% { opacity: 1; transform: translate(0, 0) scale(1); filter: drop-shadow(0 0 0px rgba(0, 255, 102, 0.55)); }
+    }
+
+    @keyframes target-color-flicker {
+        0%   { opacity: 0; background-color: #ffffff; }
+        85%  { opacity: 0; background-color: #ffffff; }
+        90%  { opacity: 1; background-color: #00ff66; }
+        94%  { opacity: 0.15; background-color: #ffffff; }
+        97%  { opacity: 1; background-color: #00ff66; }
+        100% { opacity: 1; background-color: #00ff66; }
+    }
+
+    .hero-banner::before {
+        animation: hero-focus-pulse 4s ease-in 1 both;
+        animation-delay: 3.6s;
+    }
+
+    .hero-asset-target {
+        animation: target-lock-on 4s ease-in-out 1 both;
+        animation-delay: 3.6s;
+    }
+
+    .hero-asset-target::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        -webkit-mask-image: url("asset/HERO/target.png");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-image: url("asset/HERO/target.png");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        animation: target-color-flicker 4s ease-in-out 1 both;
+        animation-delay: 3.6s;
+    }
+
+}
+
+.hero-asset-border{
+    position: absolute;
+    left: 1%;
+    top: 1.7778%;
+    width: 98%;
+
+}
+.hero-asset-dll{
+    position: absolute;
+    left: 96.875%;
+    top: 30.8889%;
+    width: 3.125%;
+    
+}
+
+.hero-asset-dlr{
+    position: absolute;
+    left: 0%;
+    top: 85.1111%;
+    width: 3.125%;
+    
+}
+
+.hero-asset-hr{
+    position: absolute;
+    left: 6%;
+    top: 96.4444%;
+    width: 86.125%;
+
+}
+
+.hero-asset-meta{
+    position: absolute;
+    left: 79.5625%;
+    top: 91.7778%;
+    width: 15.5%;
+
+}
+
+.hero-asset-patternl{
+    position: absolute;
+    left: 6.6875%;
+    top: 66.3333%;
+    width: 1.5625%;
+
+}
+
+.hero-asset-patternr{
+    position: absolute;
+    left: 89.9375%;
+    top: 79%;
+    width: 3.5%;
+
+}
+
+.hero-asset-sidel{
+    position: absolute;
+    left: 97.9375%;
+    top: 11.5556%;
+    width: 1.5%;
+
+}
+
+.hero-asset-sider{
+    position: absolute;
+    left: 0.75%;
+    top: 65.3333%;
+    width: 1.5%;
+
+}
+
+.hero-asset-target{
+    position: absolute;
+    left: 56.5625%;
+    top: 13.6667%;
+    width: 9.125%;
+
+}
+.hero-wrap{
+    background: color-mix(in srgb, rgb(33, 33, 33), transparent 30%);
+    z-index: 2;
+}
 
 ol, ul{
     list-style: none;
@@ -58,6 +299,43 @@ div.n-nav-fixed{
     padding: 10px 40px;
 }
 
+.ns-logo {
+    width: 25vh;
+    position: absolute;
+    left: 5vh;
+    top: 5.5vh
+}
+
+.nav-wrapper {
+    position: sticky;
+    left: 20vh;
+    bottom: 50vh;
+    z-index: 3;
+
+}
+
+#navSwitch{
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 2.5rem;
+    padding: 10px 20px;
+}
+
+#navSwitch.is-toggled {
+    transform: scale(1.2) rotate(90deg);
+}
+
+#navBar.offcanvas {
+    position: relative;
+    width: 400px;           /* Change the width */
+    height: auto;           /* Change the height if needed */
+    top: 0vh; 
+    background-color: transparent;
+    color: #ddd;
+    border: 0px;
+}
+
 .logo{
     flex-grow: 1; /* pushes logo to the left */
     white-space: nowrap;
@@ -93,131 +371,27 @@ color: black;
 float: right;
 }
 
-.page-wrapper{
-    min-height: 100%;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-}
-
-/* First Section */
-.section-1{
-    width: 100%;
-    height: 600px;
-    background-image: url(asset/Bubble.png);
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .hero-banner{
     background-color: rgba(0, 0, 0, 0.644);
     width: auto;
     height: inherit;
 }
 
-.title{
-    text-align: center;
-    padding:25%;
-    color: white;
-    font-size: larger;
-}
-
-.title h1,h4{
-    margin: 0;
-}
-
-.title h1{
-    font-size: 75px;
-}
-
-.section-2{
-    height: 400px;
-    background-color: rgb(103, 180, 180);
-   
-}
-
-.section-3{
-    height: 400px;
-}
-
-.section-4{
-    height: 400px;
-    background-color: rgb(93, 89, 89);
-}
-
-/* Section 5 Socmed */
-
-.section-5{
-    height: 450px;
-}
-
-.fa{
-    display:grid;
-    padding: 20px;
-    margin: 5px;
-    font-size: 30px;
-    width: 50px;
-    height:50px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
-}
-
-.fa:hover{
-    opacity: 0.7;
-}
-
-.fa-twitter{
-    background: rgb(69, 190, 220);
-    color: white;
-}
-
-.fa-youtube-play{
-    background: rgb(192, 4, 4);
-    color: white;    
-}
-
-.fa-twitch{
-    background: rgb(74, 41, 157);
-    color: white;
-
-}
-
-.fa-github{
-    background: rgb(13, 13, 13);
-    color: white;
-}
-
-
-
-/* Footer */
-.footer{
+.coming-soon-overlay {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 75px;
-    background-color: #ddd;
-    text-align: center;
-    padding-top: 20px;
-    margin: 0;
-}
-
-.footer hr{
-    width: 85%;
-}
-
-.footer p{
-    margin: 5px;
-    padding: 0;
-}
-.footer a{
-    padding: 0px 20px;
-    font-size: 18px;
-}
-
-.pg-content{
-    padding: 20px;
+    inset: 0;
+    z-index: 5;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: rgba(18, 18, 18, 0.92);
+}
+
+.coming-soon-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     text-align: center;
 }
